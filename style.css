@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 512px;
+    height: 512px;
+    overflow: hidden;
+}
+
+.container > img {
+    width: calc(8 * 512px);
+    position: absolute;
+    -webkit-animation: animate 1s steps(8) forwards;
+    animation: animate 600ms 1s steps(7) forwards ;
+    
+}
+
+.after {
+    position: relative;
+    width: 512px;
+    height: 512px;
+    display: none;
+}
+
+.main-picture {
+    width: 512px;
+}
+
+.parts {
+    position: absolute;
+    left: 0;
+    width: 512px;
+}
+
+@keyframes animate {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -3584px;
+    }
+    
+}
+
+@-webkit-keyframes animate {
+    0% {
+        left: 0;
+    }
+    
+    100% {
+        left: -3584px;
+    }
+}
